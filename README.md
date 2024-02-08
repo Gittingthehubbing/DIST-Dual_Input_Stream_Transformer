@@ -6,7 +6,7 @@ To get the data that was used to develop and train the models please see: [OSF L
 
 ## Run via Huggingface Space
 Please see our Huggingface space for an easy way of applying the model to your .asc files or the preprocessed files linked above:
-[Space](https://huggingface.co/spaces/bugroup/drift_correct2)
+[Space](https://huggingface.co/spaces/bugroup/Eye_Tracking_Drift_Correction)
 
 ## Run in Notebook
 To correct fixation data without the space please see the jupyter notebook "run_in_notebook.ipynb"
