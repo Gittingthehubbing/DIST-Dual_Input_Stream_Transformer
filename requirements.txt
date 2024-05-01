@@ -6,7 +6,7 @@ pandas
 PyYAML
 seaborn
 tqdm
-transformers==4.30.2
+transformers==4.39
 tensorboard
 torchmetrics
 pytorch-lightning
@@ -16,7 +16,7 @@ lovely-tensors
 timm
 openpyxl
 torch==2.*
-pydantic==1.10
+pydantic
 streamlit
 pycairo
 eyekit
