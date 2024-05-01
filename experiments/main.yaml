@@ -1,0 +1,127 @@
+results_folder: results
+loop_results_folder: loop_results
+plot_folder_name: results/plots
+pickle_save_str: temp_saves
+loss_plots_folder_name: loss_plots
+modelSaveFolder : results/saved_models
+finished_cfgs_folder_name: finished_cfgs
+processed_data_folder_name: processed_data
+processed_data__fixations_file_ending: _fixations.csv
+processed_data__trial_file_ending: _trial.json
+
+track_gradient_histogram: False
+track_activations_via_hook: False
+
+padding_at_end: True
+input_padding_val: 10
+target_padding_number: -100
+
+one_hot_y: false
+batch_size: 32
+num_epochs: -1
+max_training_steps: 250
+use_training_steps_for_end_and_lr_decay: true
+
+set_max_seq_len_manually: true 
+manual_max_sequence_for_model: 500 
+manual_max_sequence_len: 500 
+set_max_chars_seq_len_manually: false 
+manual_max_chars_sequence_len: 1720 
+set_num_classes_manually: True
+manually_set_num_classes: 16 
+ord_reg_loss_max: 16
+ord_reg_loss_min: -1
+zero_line_numbers_before_padding: true
+
+norm_coords_by_letter_min_x_y: true
+normalize_by_line_height_and_width: true
+norm_by_char_averages: false 
+norm_by_line_width: false
+add_normalised_values_as_features: false
+
+use_embedded_char_pos_info: true
+use_words_coords: false
+use_char_bounding_boxes: true
+method_chars_into_model: resnet # bert, dense, resnet
+cv_char_modelname: coatnet_nano_rw_224
+
+chars_conv_lr_reduction_factor: 1
+
+char_plot_shape: [224,224] 
+method_to_include_char_positions: concat #concat or add
+
+add_layer_norm_to_char_mlp: true
+
+im_partial_string: fixations_chars_channel_sep 
+model_to_use: BERT # cv_only_model,BERT
+
+source_for_pretrained_cv_model: timm # bolts, huggingface, timm, torch_hub
+remove_timm_classifier_head_pooling: true
+change_pooling_for_timm_head_to: AdaptiveAvgPool2d 
+chars_conv_pooling_out_dim: 1
+
+use_in_projection_bias: false
+add_layer_norm_to_in_projection: false
+n_layers_BERT: 4
+head_multiplication_factor: 64
+num_attention_heads: 8
+chars_bert_reduction_factor: 4
+hidden_dropout_prob: 0.0
+layer_norm_after_in_projection: true
+num_lin_layers: 1
+linear_activation: GELU 
+last_activation: Identity 
+
+lr: 4.e-4 
+use_lr_warmup: true
+num_warmup_steps: 3000
+warmup_exponent: 1
+use_reduce_on_plateau: false 
+precision: 16-mixed
+
+weight_decay: 0.0
+
+save_top_k: 1
+save_weights_only: true
+
+lr_scheduling: StepLR #const,ExponentialLR,multistep,anneal, StepLR, OneCycleLR
+lr_sched_exp_fac: #0.99
+multistep_milestones: #[10,15,20,25,30,35,40,45,50,55,60]
+gamma_multistep: #0.5
+gamma_step_size: 3000
+gamma_step_factor: 0.5
+min_lr_anneal: 1e-6
+
+loss_function: corn_loss # corn_loss CrossEntropyLoss OrdinalRegLoss 
+
+sample_cols:
+  - x
+  - y
+
+add_line_overlap_feature: true
+  
+system_data_dir: "F:/pydata/ET2"
+
+dataset_folders:
+  - Abbr
+  - ChA
+  - OffN
+  - TexF
+  - CD
+  - OZ
+  - Harry
+  - MECOde 
+  - Carr
+  - Sim
+
+dataset_folder_idx_training: [0,6,9] 
+dataset_folder_idx_evaluation: [5]
+remove_eval_idx_from_train_idx: true
+use_reduced_set: 1 # reduces number of samples used
+
+restrict_sim_data_to: 4000
+use_multiprocessing: false
+num_workers: 0
+use_CPU: false
+use_all_GPUs: false
+GPU_to_use: [0] # list or auto, only used if above false
