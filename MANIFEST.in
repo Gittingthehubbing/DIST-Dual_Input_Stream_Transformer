@@ -1,0 +1,13 @@
+include PACKAGING_NOTES.md
+include requirements.txt
+include app.py
+include train.py
+include analysis_funcs.py
+include classic_correction_algos.py
+include eyekit_measures.py
+include loss_functions.py
+include models.py
+include utils.py
+include algo_cfgs_all.json
+include run_in_notebook.ipynb
+recursive-include examples *.ipynb
